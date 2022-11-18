@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\CollectionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FlightController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +48,53 @@ Route::get("flights",[
     FlightController::class,
     "index"
 ]);
+Route::get(
+    "collect1",
+    [
+        CollectionController::class,
+        'collection_class'
+    ]
+);
+
+Route::get(
+    'collect2',
+    [
+      CollectionController::class,
+      'collect_method'
+    ]
+);
+Route::get(
+    'src_collection',
+    [
+        CollectionController::class,
+        'search_data'
+    ]
+);
+
+Route::get(
+    'filter_collection',
+    [
+        CollectionController::class,
+        'filter_data'
+    ]
+);
+
+Route::get(
+     'sort_collection',
+     [
+        CollectionController::class,
+        'sort_data'
+    ]
+    );
+
+    Route::get(
+        'key_collection',
+        [
+            CollectionController::class,
+           'read_keys'
+        ]
+    );
+
 
 
 
@@ -61,3 +110,7 @@ Route::get("flights",[
 //         return view('child');
 //     });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
