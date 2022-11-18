@@ -32,10 +32,7 @@ Route::get(
     }
 );
 
-Route::get('/user/{id}', [
-    UserController::class,
-    'show'
-]);
+Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::resource('photos', PhotoController::class);
 
