@@ -8,6 +8,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\FlightController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,7 +115,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
+Route::get('add-blog-post-form', [PostController::class, 'index']);
+Route::post('store-form', [PostController::class, 'store']);
 
 
 
