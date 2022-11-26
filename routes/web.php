@@ -15,6 +15,9 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CacheController;
 use App\Http\Controllers\NumberController;
 use App\Http\Controllers\StringController;
+use App\Http\Controllers\IdentitycardController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -159,3 +162,7 @@ Route::get('/string', [StringController::class,'index']);
 //     });
 
 
+Route::get('/identity',[IdentitycardController::class,'index']);
+Route::get('/user',[UserController::class,'index']);
+Route::get('/brand',[BrandController::class,'index']);
+Route::get('/product',[ProductController::class,'index']);
