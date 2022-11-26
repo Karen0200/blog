@@ -66,6 +66,8 @@ class Kernel extends HttpKernel
         'age' => \App\Http\Middleware\CheckAge::class,
         'role' => \App\Http\Middleware\RoleMiddleware::class,
         'terminate' => \App\Http\Middleware\TerminateMiddleware::class,
+        'number' => \App\Http\Middleware\FirstMiddleware::class,
+        'string' => \App\Http\Middleware\SecondMiddleware::class,
 
     ];
 }

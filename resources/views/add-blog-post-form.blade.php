@@ -30,13 +30,21 @@
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store-form')}}">
        @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
-          <input type="text" id="title" name="title" class="form-control" >
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" id="name" name="name" class="form-control" >
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Description</label>
-          <textarea name="description" class="form-control"></textarea>
+          <label for="exampleInputEmail1">Email</label>
+          <input type="text" id="email" name="email" class="form-control"></input>
         </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Password</label>
+              <input type="password" id="password" name="password" class="form-control"></input>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Address</label>
+              <input type="text" id="address" name="description" class="form-control"></input>
+          </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

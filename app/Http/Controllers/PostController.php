@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Password;
 
 class PostController extends Controller
 {
@@ -11,24 +12,30 @@ class PostController extends Controller
     {
         return view('add-blog-post-form');
     }
+
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'title'=>'required|min:6',
-            'description'=>'required|min:3|max:100'
+        $this->validate($request, [
+            'name' => 'required|alpha|min:2',
+            'email' => 'required|email:rfc,dns|max:100',
+            'password' => [
+                'required',
+                'confirmed',
+                'string',
+                'min:8',
+                'max:30'
+            ],
+            'address' => 'nullable|alpha_num'
         ],
-        [
-            "title.required" => "lracnel inputy",
-             //error masagy grel qo uzacy
-             
 
-        ]
-    );
+        );
 
         $post = new Post;
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->name = $request->name;
+        $post->email = $request->email;
+        $post->password = $request->password;
+        $post->address = $request->address;
         $post->save();
-        return redirect('add-blog-post-form')->with('status', 'Blog Post Form Data Has Been inserted');
+        return redirect('add-blog-post-form');
     }
 }

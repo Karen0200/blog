@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function index( Request $request){
-        $user = Auth::user();
-        echo $user?->name;
+//        $user = Auth::user();
+//        echo $user?->name;
 
         $params = $request->all();
         // dd($request->path());
         // dd($request->url());
        // dd($request->fullUrl());
         //dd($request->method());
-        $name = $request->input('name', 'Vardan Mamikonyan');
-        dd($name);
+//        $name = $request->input('name', 'Vardan Mamikonyan');
+//        dd($name);
 
 
 
