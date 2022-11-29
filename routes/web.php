@@ -147,7 +147,7 @@ Route::get('cache/get', [CacheController::class, 'get']);
 Route::get('/number', [NumberController::class,'index'])
     ->middleware('number');
 
-Route::get('/string', [StringController::class,'index']);
+Route::get('/number/{num}', [NumberController::class,'equality']);
 
 
 
