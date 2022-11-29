@@ -23,11 +23,14 @@ class ProductController extends Controller
         $brand_id = 1;
         $product = Product::create([
             'title' => 'Shoes Futsal Adidas',
-            'price' => '230',
+            'price' => '488',
             'brand_id' => $brand_id
         ]);
-
         $product->categories()->sync($category_id);
+
+        // $product = Product::find(6);
+        //     dd($product->name); exit;
+
     }
 
     public function showData()

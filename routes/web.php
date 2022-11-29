@@ -17,6 +17,8 @@ use App\Http\Controllers\NumberController;
 use App\Http\Controllers\IdentitycardController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FileUpload;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -166,3 +168,6 @@ Route::get('/product',[ProductController::class,'index']);
 
 Route::get('/product/store',[ProductController::class,'store']);
 Route::get('/product/show-data',[ProductController::class,'showData']);
+
+Route::get('/upload-file', [FileUpload::class, 'createForm']);
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
