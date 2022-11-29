@@ -16,7 +16,7 @@ class SecondMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->string == 'script') {
+        if ($request->number == 10) {
             return redirect('/');
         }
 

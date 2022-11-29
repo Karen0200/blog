@@ -67,7 +67,7 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\RoleMiddleware::class,
         'terminate' => \App\Http\Middleware\TerminateMiddleware::class,
         'number' => \App\Http\Middleware\FirstMiddleware::class,
-        'string' => \App\Http\Middleware\SecondMiddleware::class,
+        'equality' => \App\Http\Middleware\SecondMiddleware::class,
 
     ];
 }

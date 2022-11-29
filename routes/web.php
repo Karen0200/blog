@@ -14,7 +14,7 @@ use App\Http\Controllers\ABCController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CacheController;
 use App\Http\Controllers\NumberController;
-use App\Http\Controllers\StringController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
