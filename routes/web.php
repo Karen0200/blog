@@ -14,7 +14,9 @@ use App\Http\Controllers\ABCController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CacheController;
 use App\Http\Controllers\NumberController;
-
+use App\Http\Controllers\IdentitycardController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -158,4 +160,9 @@ Route::get('/number/{num}', [NumberController::class,'equality']);
 //         return view('child');
 //     });
 
+Route::get('/identity',[IdentitycardController::class,'index']);
+Route::get('/brand',[BrandController::class,'index']);
+Route::get('/product',[ProductController::class,'index']);
 
+Route::get('/product/store',[ProductController::class,'store']);
+Route::get('/product/show-data',[ProductController::class,'showData']);
