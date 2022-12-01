@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Category;
 
-class CategorySeeder extends Seeder
+class CompanySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,10 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Shoes','Futsal','FootBall','Casual'];
+        $categories = ['sadfShoes','afsdfasFutsal','asdfFootBall','fasdfCasual'];
 
         foreach ($categories as $category) {
-            Category::create([
+            Company::create([
                 'title' => $category
             ]);
         }

@@ -24,7 +24,6 @@ class TaskSeeder extends Seeder
         for($i = 0; $i < 10; $i++) {
             DB::table("tasks")->insert([
                 "user_id" => $users_count,
-                //rand(1, $users_count),
                 "title" => Str::random(10),
                 "completed" => rand(0,1)
             ]);
@@ -32,8 +31,4 @@ class TaskSeeder extends Seeder
 
     }
 }
-//DB::table('tasks')->insert([
-//            'user_id' => User::all()->random()->id,
-//            'title' => str::random(10),
-//            'completed' => rand(0, 10),
-//        ]);
+

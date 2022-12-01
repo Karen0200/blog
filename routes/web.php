@@ -18,6 +18,8 @@ use App\Http\Controllers\IdentitycardController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +38,9 @@ Route::get('/', function () {
 Route::get('foo', function () {
     return 'Hello World';
 });
-Route::get('user/{id}', function (int $id) {
-    return 'User ' . $id;
-});
+//Route::get('user/{id}', function (int $id) {
+//    return 'User ' . $id;
+//});
 Route::get(
     'posts/{post}/comments/{comment}',
     function ($postId, $commentId) {
@@ -46,7 +48,7 @@ Route::get(
     }
 );
 
-Route::get('/user/{id}', [UserController::class, 'show']);
+//Route::get('/user/{id}', [UserController::class, 'show']);
 
 Route::resource('photos', PhotoController::class);
 
@@ -171,3 +173,9 @@ Route::get('/product/show-data',[ProductController::class,'showData']);
 
 Route::get('/upload-file', [FileUpload::class, 'createForm']);
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+Route::get('/category', [CategoryController::class, 'index']);
+
+Route::get('/company',[CompanyController::class,'index']);
+Route::get('/company/{id}',[CompanyController::class,'show']);
+Route::get('/users',[UserController::class,'withCompany']);
+Route::get('/users/{id}',[UserController::class,'show']);

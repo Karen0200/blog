@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,8 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function companies()
+    {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
     public function identity()
-{
-   return $this->hasOne(Identitycard::class);
-}
+    {
+       return $this->hasOne(Identitycard::class);
+    }
 }

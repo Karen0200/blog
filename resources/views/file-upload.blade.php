@@ -44,7 +44,8 @@
             </button>
         </form>
 
-        <img src={{asset("/storage/uploads/1669744064_10854749.jpg")}}
+        echo asset('storage/uploads/file.txt');
+    </div>
     </div>
 </body>
 </html>

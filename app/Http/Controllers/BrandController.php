@@ -9,30 +9,30 @@ class BrandController extends Controller
 {
     public function index()
     {
-    //   $brand = Brand::with(['products'])->get();
-    //   dd($brand->toArray());
+        //   $brand = Brand::with(['products'])->get();
+        //   dd($brand->toArray());
 
-    $brands = Brand::with(['products'])->get();
-    echo '<table>';
-       echo '<tr>
+        $brands = Brand::with(['products'])->get();
+        echo '<table>';
+        echo '<tr>
          <th>No</th>
          <th>Brand</th>
          <th>Product</th>
          <th>Product count</th>
          </tr>';
-         $no = 1;
-         foreach($brands as $brand){
-         echo '<tr>
-          <td>'.$no++.'</td>
-          <td>'.$brand->brand_name.'</td>
+        $no = 1;
+        foreach ($brands as $brand) {
+            echo '<tr>
+          <td>' . $no++ . '</td>
+          <td>' . $brand->brand_name . '</td>
           <td>';
-           foreach($brand->products as $product){
-               echo $product->title;
-          }
-         echo '</td>
-        <td>'.$brand->products->count().'</td>
+            foreach ($brand->products as $product) {
+                echo $product->title;
+            }
+            echo '</td>
+        <td>' . $brand->products->count() . '</td>
        </tr>';
- }
-      echo '</table>';
+        }
+        echo '</table>';
     }
 }
